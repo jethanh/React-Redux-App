@@ -7,6 +7,8 @@ export const fetchDog = () => {
             .then(res => {
                 dispatch({ type: "FETCH_DOG_SUCCESS", payload: res.data.message })
             })
-            .catch(err => console.log(err.response));
+            .catch(err => {
+                dispatch({ type: "FETCH_DOG_FAILURE", payload: `Error ${err.response.data}` })
+            });
     }
 }

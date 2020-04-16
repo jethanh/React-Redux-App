@@ -15,6 +15,8 @@ const Dog = props => {
             <h1>Dog</h1>
             {props.isFetching && <Loader type="Puff" color="#00BFFF" height={20} width={20}/>}
             {props.message && <img src={props.message} alt="dog"/>}
+            {props.error && <p>{props.error}</p>}<br/>
+            <button onClick={props.fetchDog}>Fetch</button>
         </div>
     );
 };

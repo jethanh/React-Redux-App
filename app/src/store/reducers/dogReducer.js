@@ -19,6 +19,12 @@ export const dogReducer = (state = initialState, action) => {
                 message: action.payload,
                 error: ''
             }
+        case "FETCH_DOG_FAILURE":
+            return{
+                ...state,
+                isFetching: false,
+                error: action.payload,
+            }
         default: 
             return state;
     }
